@@ -38,7 +38,7 @@
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
-    width: 200px;
+    width: 400px;
     height: 100px;
     border-radius: 7px;
     opacity: calc(var(--scroll-position) * 8);
@@ -47,7 +47,7 @@
     .dayLabel {
       font-family: 'Cormorant';
       position: absolute;
-      font-size: 24px;
+      font-size: 48px;
       white-space: nowrap;
       text-align: center;
       left: 50%;

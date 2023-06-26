@@ -17,16 +17,16 @@ export function SelfCheckout({ children }: React.PropsWithChildren) {
     return () => window.removeEventListener('scroll', updatePosition)
   }, [setScrollPosition])
 
-  // React.useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     setWindowHeight(window.innerHeight)
-  //   }
-  // }, [typeof window])
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowHeight(window.innerHeight)
+    }
+  }, [typeof window])
 
   return (
     <section className={styles.selfCheckout} style={{ '--scroll-position': progress }}>
       <div className={styles.selfCheckoutImage}>
-        <Image src={SelfCheckoutImage} fill alt='' priority />
+        <Image src={SelfCheckoutImage} fill alt='' quality={100} priority />
       </div>
       <p className={styles.paragraph}>
         В любое время суток<br></br>рассчитайтесь в <b>кассе самообслуживания</b>

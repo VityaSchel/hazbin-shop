@@ -6,7 +6,7 @@ import TovarsImage from '@/assets/shop.png'
 export function Tovars({ children }: React.PropsWithChildren) {
   const [scrollPosition, setScrollPosition] = React.useState(0)
   const [windowHeight, setWindowHeight] = React.useState(1080)
-  const progress = Math.max(0, Math.min(1, (scrollPosition - windowHeight * 3.35) / (windowHeight * 0.1)))
+  const progress = Math.max(0, Math.min(1, (scrollPosition - windowHeight * 4.5) / (windowHeight * 0.5)))
 
   React.useEffect(() => {
     const updatePosition = () => {
@@ -17,15 +17,15 @@ export function Tovars({ children }: React.PropsWithChildren) {
     return () => window.removeEventListener('scroll', updatePosition)
   }, [setScrollPosition])
 
-  // React.useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     setWindowHeight(window.innerHeight)
-  //   }
-  // }, [typeof window])
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowHeight(window.innerHeight)
+    }
+  }, [typeof window])
 
   return (
     <section className={styles.tovars} style={{ '--scroll-position': progress }}>
-      <Image src={TovarsImage} fill alt='' priority />
+      <Image src={TovarsImage} fill alt='' quality={100} priority />
       <div className={styles.paragraph}>
         В самом модном магазине города demovio вы найдете
         <span className={styles.food}>еду в ассортименте,</span>
