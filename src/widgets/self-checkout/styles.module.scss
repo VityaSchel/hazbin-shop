@@ -1,0 +1,26 @@
+.selfCheckout {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920 / 1080;
+  background-color: #121212;
+  overflow: hidden;
+
+  .selfCheckoutImage {
+    transform: translateY(calc(var(--scroll-position) * -10%));
+    position: relative;
+    width: 100%;
+    height: 110%;
+  }
+
+  .paragraph {
+    position: absolute;
+    bottom: 5vw;
+    left: 5vw;
+    width: 40vw;
+    font-family: 'Cormorant';
+    font-size: 48px;
+    display: flex;
+    flex-direction: column;
+  }
+}

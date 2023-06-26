@@ -1,0 +1,30 @@
+.hero {
+  position: relative;
+  --scroll-position: 0;
+  height: 100vh;
+
+  .parallaxBackground {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1920 / 1080;
+    transform: translateY(calc(var(--scroll-position) * 5%));
+    opacity: max(0.1, calc(1 - var(--scroll-position)));
+    mask-image: linear-gradient(black calc(calc(1 - var(--scroll-position)) * 100%), transparent);
+  }
+
+  .headline {
+    text-align: right;
+    font-size: 128px;
+    font-family: Pompiere;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    font-weight: 400;
+    background-clip: text;
+    -webkit-background-clip: text;
+    --normalized-red: calc(calc(1 - min(1, calc(var(--scroll-position) * 2))) * 255);
+    background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, var(--normalized-red), var(--normalized-red), var(--scroll-position)));
+    color: transparent;
+  }
+}

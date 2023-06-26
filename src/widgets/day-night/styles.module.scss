@@ -1,0 +1,79 @@
+.dayNight {
+  position: sticky;
+  top: 0;
+  height: 200vh;
+  --scroll-position: 0;
+  margin-top: 200px;
+
+
+  // 0.4 - 0.5
+  $min: 0.4;
+  $max: 0.5;
+  --progress: calc(calc(var(--scroll-position) - #{$min}) * calc(1 / (#{$max} - #{$min})));
+  --progress-limited: min(1, max(0, var(--progress)));
+
+  .parallaxBackground {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    --progress: min(1, calc(var(--scroll-position) * 4));
+    mask-image: linear-gradient(transparent calc(var(--progress) * -50%), black calc(50% + calc(var(--progress) * -50%)));
+    transform: translateY(calc(var(--scroll-position) * 130%));
+
+    .night {
+
+    }
+
+    .day {
+      opacity: var(--progress-limited);
+    }
+  }
+
+  .labels {
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    border-radius: 7px;
+    opacity: calc(var(--scroll-position) * 8);
+
+    .nightLabel,
+    .dayLabel {
+      font-family: 'Cormorant';
+      position: absolute;
+      font-size: 24px;
+      white-space: nowrap;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+
+      span {
+        font-weight: bold;
+        margin-left: 10px;
+      }
+    }
+
+    .nightLabel {
+      opacity: calc(1 - var(--progress-limited));
+
+      span {
+        color: #d3e0ff;
+      }
+    }
+  
+    .dayLabel {
+      opacity: var(--progress-limited);
+
+      span {
+        color: #ffd7d3;
+      }
+    }
+  }
+
+}
