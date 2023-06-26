@@ -25,7 +25,7 @@ export function Tovars({ children }: React.PropsWithChildren) {
 
   return (
     <section className={styles.tovars} style={{ '--scroll-position': progress }}>
-      <Image src={TovarsImage} fill alt='' />
+      <Image src={TovarsImage} fill alt='' priority />
       <div className={styles.paragraph}>
         В самом модном магазине города demovio вы найдете
         <span className={styles.food}>еду в ассортименте,</span>

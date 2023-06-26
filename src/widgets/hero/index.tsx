@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section className={styles.hero} style={{ '--scroll-position': Math.min(scrollPosition/400, 1) }}>
       <div className={styles.parallaxBackground}>
-        <Image src={HeroParallaxBackground} className={styles.parallaxBackgroundImage} alt='' quality={100} fill />
+        <Image src={HeroParallaxBackground} className={styles.parallaxBackgroundImage} alt='' quality={100} fill priority />
       </div>
       <h1 className={styles.headline}>Hazbin Shop</h1>
     </section>

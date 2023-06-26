@@ -27,8 +27,8 @@ export function DayNight() {
   return (
     <section className={styles.dayNight} style={{ '--scroll-position': progress }}>
       <div className={styles.parallaxBackground}>
-        <Image src={NightBackground} className={styles.night} alt='' quality={100} fill />
-        <Image src={DayBackground} className={styles.day} alt='' quality={100} fill />
+        <Image src={NightBackground} className={styles.night} alt='' quality={100} fill priority />
+        <Image src={DayBackground} className={styles.day} alt='' quality={100} fill priority />
       </div>
       <div className={styles.labels}>
         <div className={styles.nightLabel}>

@@ -25,7 +25,7 @@ export function FromStreet({ children }: React.PropsWithChildren) {
 
   return (
     <section className={styles.fromStreet} style={{ '--scroll-position': progress }}>
-      <Image src={FromStreetImage} fill alt='' />
+      <Image src={FromStreetImage} fill alt='' priority />
       <div className={styles.labels}>
         <h2>Hazbin Shop ждет</h2>
         <h3>ТЕБЯ</h3>

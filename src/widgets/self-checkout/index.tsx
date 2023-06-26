@@ -26,7 +26,7 @@ export function SelfCheckout({ children }: React.PropsWithChildren) {
   return (
     <section className={styles.selfCheckout} style={{ '--scroll-position': progress }}>
       <div className={styles.selfCheckoutImage}>
-        <Image src={SelfCheckoutImage} fill alt='' />
+        <Image src={SelfCheckoutImage} fill alt='' priority />
       </div>
       <p className={styles.paragraph}>
         В любое время суток<br></br>рассчитайтесь в <b>кассе самообслуживания</b>
